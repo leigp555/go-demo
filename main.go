@@ -151,5 +151,11 @@ func readFrom() {
 	fmt.Println(bf)
 }
 func main() {
+	s := strings.NewReader("abc def ghi")
+	ns := bufio.NewScanner(s)
+	ns.Split(bufio.ScanWords)
+	for ns.Scan() {
+		fmt.Println(ns.Text())
+	}
 
 }
